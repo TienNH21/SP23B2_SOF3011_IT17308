@@ -9,21 +9,42 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @WebServlet({
-    "/khach-hang/index",
-    "/khach-hang/create",
-    "/khach-hang/store",
-    "/khach-hang/edit",
-    "/khach-hang/update",
-    "/khach-hang/delete",
+    "/khach-hang/index",    // GET
+    "/khach-hang/create",   // GET
+    "/khach-hang/store",    // POST
+    "/khach-hang/edit",     // GET
+    "/khach-hang/update",   // POST
+    "/khach-hang/delete",   // GET
 })
 public class KhachHangServlet extends HttpServlet {
     private ArrayList<QLKhachHang> list = new ArrayList<>();
+
     @Override
     protected void doGet(
         HttpServletRequest request,
         HttpServletResponse response
     ) throws ServletException, IOException {
-        this.create(request, response);
+        String uri = request.getRequestURI();
+        if (uri.contains("create")) {
+            this.create(request, response);
+        } else if (uri.contains("edit")) {
+            // this.edit(request, response);
+        } else if (uri.contains("delete")) {
+            // this.delete(request, response);
+        } else {
+            this.index(request, response);
+        }
+    }
+
+    protected void index(
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) throws ServletException, IOException {
+        list.add(new QLKhachHang("PH1", "Ng", "Van", "AAA", "12/12/2020", "0123123123", "HN", "123456", "VN", "HN"));
+        list.add(new QLKhachHang("PH2", "Tran", "Van", "B", "12/12/2018", "0123123423", "ND", "123456", "VN", "HN"));
+        request.setAttribute("danhSach", list);
+        request.getRequestDispatcher("/views/khach_hang/index.jsp")
+                .forward(request, response);
     }
 
     protected void create(

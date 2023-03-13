@@ -41,7 +41,7 @@
                     <input type="date" name="ngay_sinh" class="form-control" />
                 </div>
                 <div class="col-6">
-                    <label>Họ</label>
+                    <label>Số điện thoại</label>
                     <input type="tel" name="sdt" class="form-control" />
                 </div>
             </div>
