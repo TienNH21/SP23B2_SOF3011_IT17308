@@ -3,10 +3,12 @@ package controllers.admin;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import org.apache.commons.beanutils.BeanUtils;
 import repositories.KhachHangRepository;
 import view_model.QLKhachHang;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 @WebServlet({
@@ -92,7 +94,30 @@ public class KhachHangServlet extends HttpServlet {
         HttpServletRequest request,
         HttpServletResponse response
     ) throws ServletException, IOException {
-        this.store(request, response);
+        String uri = request.getRequestURI();
+        if (uri.contains("store")) {
+            this.store(request, response);
+        } else if (uri.contains("update")) {
+            this.update(request, response);
+        } else {
+            response.sendRedirect("/SP23B2_SOF3011_IT17308_war_exploded/khach-hang/index");
+        }
+    }
+
+    protected void update(
+        HttpServletRequest request,
+        HttpServletResponse response
+    ) throws ServletException, IOException {
+        QLKhachHang qlkh = new QLKhachHang();
+
+        try {
+            BeanUtils.populate(qlkh, request.getParameterMap());
+            this.khRepo.update(qlkh);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        response.sendRedirect("/SP23B2_SOF3011_IT17308_war_exploded/khach-hang/index");
     }
 
     protected void store(
@@ -113,5 +138,6 @@ public class KhachHangServlet extends HttpServlet {
         QLKhachHang qlkh = new QLKhachHang(ma, ho, ten_dem, ten, ngay_sinh, sdt, dia_chi, mat_khau, quoc_gia, thanh_pho);
         this.khRepo.insert(qlkh);
         System.out.println("Thêm thành công");
+        response.sendRedirect("/SP23B2_SOF3011_IT17308_war_exploded/khach-hang/index");
     }
 }
