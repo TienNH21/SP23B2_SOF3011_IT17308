@@ -1,15 +1,13 @@
-package controllers.admin;
+package Controllers.admin;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
-import repositories.KhachHangRepository;
-import view_model.QLKhachHang;
+import Repositories.KhachHangRepository;
+import ViewModel.QLKhachHang;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
 
 @WebServlet({
     "/khach-hang/index",    // GET
@@ -58,8 +56,8 @@ public class KhachHangServlet extends HttpServlet {
     }
 
     protected void index(
-            HttpServletRequest request,
-            HttpServletResponse response
+        HttpServletRequest request,
+        HttpServletResponse response
     ) throws ServletException, IOException {
         request.setAttribute("danhSach", this.khRepo.findAll());
         request.setAttribute("view", "/views/khach_hang/index.jsp");
@@ -68,16 +66,16 @@ public class KhachHangServlet extends HttpServlet {
     }
 
     protected void create(
-            HttpServletRequest request,
-            HttpServletResponse response
+        HttpServletRequest request,
+        HttpServletResponse response
     ) throws ServletException, IOException {
         request.getRequestDispatcher("/views/khach_hang/create.jsp")
             .forward(request, response);
     }
 
     protected void delete(
-            HttpServletRequest request,
-            HttpServletResponse response
+        HttpServletRequest request,
+        HttpServletResponse response
     ) throws ServletException, IOException {
         String ma = request.getParameter("ma");
         QLKhachHang qlkh = this.khRepo.findByMa(ma);
