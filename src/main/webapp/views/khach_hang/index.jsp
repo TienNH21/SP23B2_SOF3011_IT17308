@@ -41,22 +41,22 @@
                     <tr>
                         <td>${ kh.ma }</td>
                         <td>${ kh.ho }</td>
-                        <td>${ kh.ten_dem }</td>
+                        <td>${ kh.tenDem }</td>
                         <td>${ kh.ten }</td>
-                        <td>21/12/2001</td>
-                        <td>0912123321</td>
-                        <td>TVB</td>
-                        <td>HN</td>
-                        <td>VN</td>
+                        <td>${ kh.ngaySinh }</td>
+                        <td>${ kh.sdt }</td>
+                        <td>${ kh.diaChi }</td>
+                        <td>${ kh.thanhPho }</td>
+                        <td>${ kh.quocGia }</td>
                         <td>
                             <a class="btn btn-primary"
-                               href="/SP23B2_SOF3011_IT17308_war_exploded/khach-hang/edit?ma=${ kh.ma }">
+                               href="/SP23B2_SOF3011_IT17308_war_exploded/khach-hang/edit?Ma=${ kh.ma }">
                                 Cập nhật
                             </a>
                         </td>
                         <td>
                             <a class="btn btn-danger"
-                               href="/SP23B2_SOF3011_IT17308_war_exploded/khach-hang/delete?ma=${ kh.ma }">
+                               href="/SP23B2_SOF3011_IT17308_war_exploded/khach-hang/delete?Ma=${ kh.ma }">
                                 Xóa
                             </a>
                         </td>

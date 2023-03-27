@@ -14,7 +14,7 @@
 <body>
     <div class="col-8 offset-2 bg-light">
         <form method="POST"
-          action="/SP23B2_SOF3011_IT17308_war_exploded/khach-hang/update?ma=${ kh.ma }">
+          action="/SP23B2_SOF3011_IT17308_war_exploded/khach-hang/update?Ma=${ kh.ma }">
             <div class="row mt-3">
                 <div class="col-6">
                     <label>Mã</label>
@@ -22,50 +22,50 @@
                 </div>
                 <div class="col-6">
                     <label>Họ</label>
-                    <input type="text" name="ho" class="form-control" value="${ kh.ho }" />
+                    <input type="text" name="Ho" class="form-control" value="${ kh.ho }" />
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
                     <label>Tên đệm</label>
-                    <input type="text" name="ten_dem" class="form-control" value="${ kh.ten_dem }" />
+                    <input type="text" name="TenDem" class="form-control" value="${ kh.tenDem }" />
                 </div>
                 <div class="col-6">
                     <label>Tên</label>
-                    <input type="text" name="ten" class="form-control" value="${ kh.ten }" />
+                    <input type="text" name="Ten" class="form-control" value="${ kh.ten }" />
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
                     <label>Ngày sinh</label>
-                    <input type="date" name="ngay_sinh" class="form-control" value="${ kh.ngay_sinh }" />
+                    <input type="date" name="NgaySinh" class="form-control" value="${ kh.ngaySinh }" />
                 </div>
                 <div class="col-6">
                     <label>Số điện thoại</label>
-                    <input type="tel" name="sdt" class="form-control" value="${ kh.sdt }" />
+                    <input type="tel" name="Sdt" class="form-control" value="${ kh.sdt }" />
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
                     <label>Địa chỉ</label>
-                    <input type="text" name="dia_chi" class="form-control" value="${ kh.dia_chi }" />
+                    <input type="text" name="DiaChi" class="form-control" value="${ kh.diaChi }" />
                 </div>
                 <div class="col-6">
                     <label>Mật khẩu</label>
-                    <input type="password" name="password" class="form-control" />
+                    <input type="password" name="MatKhau" class="form-control" />
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
                     <label>Quốc gia</label>
-                    <select name="quoc_gia" class="form-select">
-                        <option value="vn" ${ kh.quoc_gia == "vn" ? "selected" : "" }>Việt Nam</option>
-                        <option value="en" ${ kh.quoc_gia == "en" ? "selected" : "" }>Anh</option>
+                    <select name="QuocGia" class="form-select">
+                        <option value="vn" ${ kh.quocGia == "vn" ? "selected" : "" }>Việt Nam</option>
+                        <option value="en" ${ kh.quocGia == "en" ? "selected" : "" }>Anh</option>
                     </select>
                 </div>
                 <div class="col-6">
                     <label>Thành phố</label>
-                    <select name="quoc_gia" class="form-select">
+                    <select name="ThanhPho" class="form-select">
                         <option value="hanoi">Hà Nội</option>
                         <option value="london">London</option>
                     </select>
