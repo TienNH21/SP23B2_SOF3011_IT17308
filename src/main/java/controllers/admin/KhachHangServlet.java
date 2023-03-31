@@ -1,15 +1,13 @@
 package controllers.admin;
 
-import DomainModel.KhachHang;
+import domain_model.KhachHang;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 import repositories.KhachHangRepository;
-import ViewModel.QLKhachHang;
 
 import java.io.IOException;
-import java.sql.Date;
 
 @WebServlet({
     "/khach-hang/index",    // GET

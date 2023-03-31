@@ -18,7 +18,15 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="SP23B2_SOF3011_IT17308" />
+        </datasource-mapping>
+        <naming-strategy-map />
+      </configuration>
+    </facet>
+    <facet type="hibernate" name="Hibernate">
+      <configuration>
+        <datasource-map />
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -66,5 +74,6 @@
     <orderEntry type="library" name="Maven: com.sun.istack:istack-commons-runtime:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: jakarta.persistence:jakarta.persistence-api:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: com.microsoft.sqlserver:mssql-jdbc:9.4.1.jre16" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-core-jakarta:5.6.10.Final" level="project" />
   </component>
 </module>

@@ -1,6 +1,6 @@
 package repositories;
 
-import DomainModel.KhachHang;
+import domain_model.KhachHang;
 import Utils.HibernateUtil;
 import jakarta.persistence.TypedQuery;
 import org.hibernate.Session;
