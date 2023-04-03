@@ -36,11 +36,9 @@ public class LoginServlet extends HttpServlet {
         NhanVien nv = this.nvRepo.login(ma, matKhau);
         HttpSession session = request.getSession();
         if (nv == null) {
-            // Báo lỗi
             session.setAttribute("errorMessage", "Sai tài khoản/mật khẩu");
             response.sendRedirect("/SP23B2_SOF3011_IT17308_war_exploded/login");
         } else {
-            // Đăng nhập thành công
             session.setAttribute("nv", nv);
             response.sendRedirect("/SP23B2_SOF3011_IT17308_war_exploded/khach-hang/index");
         }
