@@ -19,7 +19,10 @@ public class ChucVu {
     @Column(name="Ten")
     private String ten;
 
-    @OneToMany(mappedBy = "cv")
+    @OneToMany(
+        mappedBy = "cv",
+        fetch = FetchType.LAZY
+    )
     private List<NhanVien> listNv;
 
     public ChucVu() {
